@@ -1,0 +1,303 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #141010;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header nav .left a img {
+  height: 25px;
+  margin-left: 5px;
+}
+
+header nav .middle a img {
+  height: 50px;
+}
+
+header nav .right a img {
+  height: 30px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  margin-right: 5px;
+}
+
+main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10%;
+}
+
+@media (max-width: 768px) {
+  main .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 100px;
+    margin-top: 0;
+  }
+}
+
+main .container .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px;
+  position: relative;
+  margin-top: 0;
+}
+
+main .container .left h2 {
+  color: white;
+  font-size: 64px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 40px;
+  margin-top: 0;
+  text-shadow: 4px 4px 2px rgba(143, 139, 139, 0.281);
+}
+
+@media (max-width: 768px) {
+  main .container .left h2 {
+    display: none;
+  }
+}
+
+main .container .left p {
+  color: #a7a2a2;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 2rem;
+  letter-spacing: 0.4px;
+  font-size: 14px;
+  text-align: center;
+  margin: 20px;
+}
+
+@media (max-width: 768px) {
+  main .container .left p {
+    display: none;
+  }
+}
+
+main .container .left button {
+  position: relative;
+  border-radius: 12px;
+  padding: 12px;
+  background-color: #ac2f2f;
+  -webkit-box-shadow: 2px 2px 2px #666464;
+          box-shadow: 2px 2px 2px #666464;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 40px;
+  color: #e7d5d5;
+}
+
+main .container .left button:hover {
+  cursor: pointer;
+  background-color: #b83a3a;
+  color: #f3fd8d;
+}
+
+@media (max-width: 768px) {
+  main .container .left button {
+    width: 120px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  main .container .left button {
+    width: 150px;
+    margin-top: 0;
+    font-size: 20px;
+  }
+}
+
+main .container .right {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media (max-width: 768px) {
+  main .container .right {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+main .container .right .ring {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  border: 3px solid #a7a2a2;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+  z-index: -1;
+  display: flex;
+  flex: 1;
+  padding: 50px;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 0;
+}
+
+@media (max-width: 480px) {
+  main .container .right .ring {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+main .container .right .ring:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  border-top: 3px solid #f3fd8d;
+  border-right: 3px solid #f3fd8d;
+  z-index: -1;
+  -webkit-animation: turningCircle 10s linear infinite;
+          animation: turningCircle 10s linear infinite;
+}
+
+@-webkit-keyframes turningCircle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes turningCircle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+main .container .right .ring .circle {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-animation: turn 10s linear infinite;
+          animation: turn 10s linear infinite;
+  z-index: -1;
+}
+
+main .container .right .ring .circle:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -9px;
+  width: 16px;
+  height: 16px;
+  background: #f3fd8d;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 20px #f3fd8d;
+          box-shadow: 0px 0px 20px #f3fd8d;
+}
+
+@-webkit-keyframes turn {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+
+@keyframes turn {
+  0% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+
+main .container .right .ring img {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: auto;
+  width: 100%;
+  z-index: +3;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/*# sourceMappingURL=style.css.map */
