@@ -1,10 +1,21 @@
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   background-color: #141010;
 }
 
-header nav {
+header .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,16 +27,16 @@ header nav {
           justify-content: space-between;
 }
 
-header nav .left a img {
+header .navbar .left a #bars {
   height: 25px;
   margin-left: 5px;
 }
 
-header nav .middle a img {
+header .navbar .middle a #logo {
   height: 50px;
 }
 
-header nav .right a img {
+header .navbar .right a #shopping {
   height: 30px;
   -webkit-filter: invert(100%);
           filter: invert(100%);
@@ -78,7 +89,7 @@ main .container .left {
   margin-top: 0;
 }
 
-main .container .left h2 {
+main .container .left .title {
   color: white;
   font-size: 64px;
   font-family: Arial, Helvetica, sans-serif;
@@ -89,12 +100,12 @@ main .container .left h2 {
 }
 
 @media (max-width: 768px) {
-  main .container .left h2 {
+  main .container .left .title {
     display: none;
   }
 }
 
-main .container .left p {
+main .container .left .paragraph {
   color: #a7a2a2;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 2rem;
@@ -105,12 +116,12 @@ main .container .left p {
 }
 
 @media (max-width: 768px) {
-  main .container .left p {
+  main .container .left .paragraph {
     display: none;
   }
 }
 
-main .container .left button {
+main .container .left .btn {
   position: relative;
   border-radius: 12px;
   padding: 12px;
@@ -123,21 +134,21 @@ main .container .left button {
   color: #e7d5d5;
 }
 
-main .container .left button:hover {
+main .container .left .btn:hover {
   cursor: pointer;
   background-color: #b83a3a;
   color: #f3fd8d;
 }
 
 @media (max-width: 768px) {
-  main .container .left button {
+  main .container .left .btn {
     width: 120px;
     margin-top: 0;
   }
 }
 
 @media (max-width: 480px) {
-  main .container .left button {
+  main .container .left .btn {
     width: 150px;
     margin-top: 0;
     font-size: 20px;
@@ -145,6 +156,15 @@ main .container .left button:hover {
 }
 
 main .container .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -198,8 +218,15 @@ main .container .right .ring {
 
 @media (max-width: 480px) {
   main .container .right .ring {
-    height: 300px;
-    width: 300px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1300px) {
+  main .container .right .ring {
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
@@ -217,6 +244,16 @@ main .container .right .ring:before {
   z-index: -1;
   -webkit-animation: turningCircle 10s linear infinite;
           animation: turningCircle 10s linear infinite;
+}
+
+@media (min-width: 1300px) {
+  main .container .right .ring:before {
+    border: 3px solid #f3fd8d;
+    -webkit-box-shadow: 0 0 20px #f3fd8d;
+            box-shadow: 0 0 20px #f3fd8d;
+    -webkit-animation: none;
+            animation: none;
+  }
 }
 
 @-webkit-keyframes turningCircle {
@@ -242,7 +279,6 @@ main .container .right .ring:before {
 }
 
 main .container .right .ring .circle {
-  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -269,6 +305,12 @@ main .container .right .ring .circle:before {
           box-shadow: 0px 0px 20px #f3fd8d;
 }
 
+@media (min-width: 1300px) {
+  main .container .right .ring .circle:before {
+    display: none;
+  }
+}
+
 @-webkit-keyframes turn {
   0% {
     -webkit-transform: rotate(45deg);
@@ -291,7 +333,7 @@ main .container .right .ring .circle:before {
   }
 }
 
-main .container .right .ring img {
+main .container .right .ring .shoe {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: auto;

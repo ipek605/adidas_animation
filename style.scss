@@ -1,21 +1,30 @@
 $mainGrayColor: rgb(167, 162, 162);
 $mainYellowColor: #f3fd8d;
-
+html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+    height: 100%;
+    overflow: hidden;
   background-color: rgb(20, 16, 16);
 
 }
 
 header {
-  nav {
+  .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     .left {
       a {
-        img {
+        #bars {
           height: 25px;
           margin-left: 5px;
         }
@@ -23,14 +32,14 @@ header {
     }
     .middle {
       a {
-        img {
+        #logo {
           height: 50px;
         }
       }
     }
     .right {
       a {
-        img {
+        #shopping {
           height: 30px;
           filter: invert(100%);
           margin-right: 5px;
@@ -62,7 +71,7 @@ main {
       position: relative;
       margin-top: 0;
 
-      h2 {
+      .title {
         color: white;
         font-size: 64px;
         font-family: Arial, Helvetica, sans-serif;
@@ -74,7 +83,7 @@ main {
           display: none;
         }
       }
-      p {
+      .paragraph{
         color: $mainGrayColor;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         line-height: 2rem;
@@ -86,7 +95,7 @@ main {
           display: none;
         }
       }
-      button {
+      .btn {
         position: relative;
         border-radius: 12px;
         padding: 12px;
@@ -113,6 +122,8 @@ main {
       }
     }
     .right {
+        display: flex;
+        justify-content: center;align-items: center;
         width: 100%;
      flex:1;
      @media (max-width: 768px) {
@@ -141,9 +152,13 @@ main {
         margin-left: 50px;
         margin-top: 0;
         @media (max-width: 480px) {
-          height: 300px;
-          width: 300px;
+          width: 100%;
         }
+        @media(min-width:1300px){
+          border:none;
+          box-shadow: none;
+        }
+       
 
         &:before {
           content: "";
@@ -158,7 +173,12 @@ main {
           border-right: 3px solid $mainYellowColor;
           z-index: -1;
           animation: turningCircle 10s linear infinite;
+          @media(min-width:1300px){
+            border:3px solid $mainYellowColor;
+            box-shadow:0 0 20px $mainYellowColor;
+          animation:none;          }
         }
+
         @keyframes turningCircle {
           0% {
             transform: rotate(0deg);
@@ -168,7 +188,6 @@ main {
           }
         }
         .circle {
-          display: block;
           position: absolute;
           top: 50%;
           left: 50%;
@@ -178,6 +197,8 @@ main {
           transform-origin: left;
           animation: turn 10s linear infinite;
           z-index: -1;
+    
+         
 
           &:before {
             content: "";
@@ -189,6 +210,9 @@ main {
             background: $mainYellowColor;
             border-radius: 50%;
             box-shadow: 0px 0px 20px $mainYellowColor;
+            @media(min-width:1300px){
+              display:none;
+            }
           }
 
           @keyframes turn {
@@ -201,14 +225,15 @@ main {
           }
         }
 
-        img {
+        .shoe {
           box-sizing: border-box;
           height: auto;
           width: 100%;
           z-index: +3;
           object-fit: contain;
-        }
+        
       }
     }
   }
+}
 }
